@@ -13,7 +13,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photoChoisieImageView.image = image
+            // UIImagePNGRepresentation retourne l'image au format PNG
             if let data = UIImagePNGRepresentation(image) {
+                // exécution de requete via avec VISION
                 requete(data: data)
             }
         }

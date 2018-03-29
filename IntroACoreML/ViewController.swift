@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var cameraVue: UIView!
     @IBOutlet weak var predictionLabel: UILabel!
     @IBOutlet weak var photoChoisieImageView: UIImageView!
-    
     @IBOutlet weak var librairie: UIButton!
     @IBOutlet weak var rotationBouton: UIButton!
+    
     var captureSession: AVCaptureSession?
     var capturePhotoOutput: AVCapturePhotoOutput?
     var captureVideoCapturePreviewLayer: AVCaptureVideoPreviewLayer?

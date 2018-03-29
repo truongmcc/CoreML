@@ -4,7 +4,9 @@
 //
 //  Created by christophe on 27/03/2018.
 //  Copyright © 2018 christophe. All rights reserved.
-//
+// COURS SYMPA :
+// https://medium.com/@hunter.ley.ward/ml-on-ios-running-coreml-on-ios-f9cb340f3855
+
 
 import UIKit
 import CoreML
@@ -14,8 +16,14 @@ extension ViewController {
     
     func requete(data: Data) {
         do {
+            // 1) creation du moedèle
+            // Vision va créer le modèle via le modèle MobuleNet
             let coreMLModel = try VNCoreMLModel(for: MobileNet().model)
+            
+            // 2) création et exécution de la requête
+            // VNCoreMLRequest est une requête sur l'analyse d'image qui utilise le modèle CoreML
             let requete = VNCoreMLRequest(model: coreMLModel, completionHandler: reponse)
+            // VNImageRequestHandler : objet qui traite une ou plusieurs demandes d'analyse d'image appartenant à une seule image.
             let requeteHandler = VNImageRequestHandler(data: data)
             try requeteHandler.perform([requete])
         } catch {
@@ -25,6 +33,7 @@ extension ViewController {
     }
     
     func reponse (_ requete: VNRequest, _ erreur: Error?) {
+        // VNClassificationObservation est la classification des résultats de la requete
         if let result = requete.results as? [VNClassificationObservation] {
             for res in result {
                 print(res.identifier)

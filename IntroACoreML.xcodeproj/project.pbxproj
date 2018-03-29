@@ -62,9 +62,9 @@
 		D9703D60206A426D00079866 /* IntroACoreML */ = {
 			isa = PBXGroup;
 			children = (
-				D9C3165F206A754300F0D74F /* CoreMlModel */,
 				D9703D61206A426D00079866 /* AppDelegate.swift */,
 				D9703D63206A426D00079866 /* ViewController.swift */,
+				D9C3165F206A754300F0D74F /* CoreMlModel */,
 				D9C3165D206A71A400F0D74F /* LibrairieExtension.swift */,
 				D9703D73206A485400079866 /* CameraExtension.swift */,
 				D9703D65206A426D00079866 /* Main.storyboard */,
